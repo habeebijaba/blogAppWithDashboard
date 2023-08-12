@@ -43,6 +43,11 @@ app.post('/api/upload', upload.single('file'), function (req, res) {
 app.use('/api', authRoutes)
 app.use('/api/posts', postRoutes)
 
+app.use('/',
+    (req, res) => {
+        res.send("works")
+    })
+
 
 // Error handling middleware
 app.use((err, req, res, next) => {
