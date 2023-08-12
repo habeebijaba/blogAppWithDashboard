@@ -13,10 +13,10 @@ const {
     commentPost
 } = require('../controllers/postController')
 
-// router.get("/", getPosts)
-router.get("/",(req,res)=>{
-    res.send("route works")
-})
+router.get("/", getPosts)
+// router.get("/",(req,res)=>{
+//     res.send("route works")
+// })
 router.get("/:id", getPost)
 router.post("/", addPost)
 router.delete("/:id", deletePost)
