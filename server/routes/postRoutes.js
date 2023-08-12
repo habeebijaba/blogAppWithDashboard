@@ -11,17 +11,22 @@ const {
     searchPost,
     likePost,
     commentPost
-     } = require('../controllers/postController')
+} = require('../controllers/postController')
 
 router.get("/", getPosts)
 router.get("/:id", getPost)
 router.post("/", addPost)
 router.delete("/:id", deletePost)
 router.put("/:id", updatePost)
-router.get('/searchPost/:key',searchPost)
+router.get('/searchPost/:key', searchPost)
 
 router.patch("/:id/like", likePost);
 router.patch("/:id/comment", commentPost);
+
+router.get("/test", (req, res) => {
+    res.send("hello")
+})
+
 
 
 module.exports = router
