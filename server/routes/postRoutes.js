@@ -13,7 +13,10 @@ const {
     commentPost
 } = require('../controllers/postController')
 
-router.get("/", getPosts)
+// router.get("/", getPosts)
+router.get("/",(req,res)=>{
+    res.send("route works")
+})
 router.get("/:id", getPost)
 router.post("/", addPost)
 router.delete("/:id", deletePost)
@@ -23,9 +26,6 @@ router.get('/searchPost/:key', searchPost)
 router.patch("/:id/like", likePost);
 router.patch("/:id/comment", commentPost);
 
-router.get("/test", (req, res) => {
-    res.send("hello")
-})
 
 
 
